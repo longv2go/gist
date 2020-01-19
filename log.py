@@ -24,7 +24,7 @@ __LOGGER_CONFIG = {
     },
     "formatters": {
         "simpleformat": {
-            "format": "%(asctime)s %(levelname)s %(process)d %(message)s"
+            "format": "%(asctime)s %(levelname)s [%(process)d] %(message)s"
         }
     },
     "handlers": {
@@ -64,17 +64,17 @@ def setLogger(name):
     except Exception as e:
         print(e)
 
-def info(msg):
-    __logger.info(msg)
+def info(msg, *args, **kwargs):
+    __logger.info(msg, *args, **kwargs)
 
-def debug(msg):
-    __logger.info(msg)
+def debug(msg, *args, **kwargs):
+    __logger.debug(msg, *args, **kwargs)
 
-def warn(msg):
-    __logger.warning(msg)
+def warn(msg, *args, **kwargs):
+    __logger.warning(msg, *args, **kwargs)
 
-def error(msg):
-    __logger.error(msg)
+def error(msg, *args, **kwargs):
+    __logger.error(msg, *args, **kwargs)
 
 
 if __name__ == '__main__':
